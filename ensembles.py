@@ -108,8 +108,8 @@ def task(XY: dict):
     print('H(XY):')
     H_x_y = entropy(list(XY.values()))
     print('Hy(X):')
-    Hy_x = conditional_entropy(list(Y.values()), list(conditional_X_Y.values())[0: len(conditional_X_Y) // 2])
+    Hy_x = conditional_entropy(list(Y.values()), list(conditional_X_Y.values())[:len(conditional_X_Y) // 2])
     print('Hx(Y):')
-    Hx_y = conditional_entropy(list(X.values()), list(conditional_X_Y.values())[len(conditional_X_Y) // 2: len(conditional_X_Y)])
+    Hx_y = conditional_entropy(list(X.values()), list(conditional_X_Y.values())[len(conditional_X_Y) // 2:])
     dependence: int = int(is_dependent(XY, X_and_Y))
     return dependence, X, Y, X_and_Y, conditional_X_Y, H_x, H_y, H_x_y, Hx_y, Hy_x
