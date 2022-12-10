@@ -30,7 +30,7 @@ def main():
     file_output.write('\n\nВычислим Y:\n')
     file_output.write('\n'.join(['p({}) = {}'.format(y, round(p, 2)) for y, p in Y.items()]))
     file_output.write('\n\nДля определения независимости ансамблей X и Y вычислим p(x_i) * p(y_j):\n')
-    file_output.write('\n'.join(['{} = {}'.format(x_y, round(p, 2)) for x_y, p in X_Y.items()]))
+    file_output.write('\n'.join(['p({}) * p({}) = {}'.format(x_y.split()[0], x_y.split()[1], round(p, 2)) for x_y, p in X_Y.items()]))
     file_output.write('\n\nВычислим условные вероятности:\n')
     file_output.write('\n'.join(['p({}) = {}'.format(xy, round(p, 2)) for xy, p in conditional_X_Y.items()]))
     file_output.write('\n\nВычислим энтропию H(x):\n' + '{}'.format(round(H_x, 2)))
