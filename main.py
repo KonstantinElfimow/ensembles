@@ -26,9 +26,9 @@ def main():
                       "(независимые - заполняем '0' (без кавычек), зависимые - '1' (без кавычек)):\n" +
                       '{}'.format(dependence))
     file_output.write('\n\nВычислим X:\n')
-    file_output.write('\n'.join(['p({}) = {}'.format(x, round(p, 2)) for x, p in X.items()]))
+    file_output.write('\n'.join(['p({}) = {}'.format(x, round(p, 4)) for x, p in X.items()]))
     file_output.write('\n\nВычислим Y:\n')
-    file_output.write('\n'.join(['p({}) = {}'.format(y, round(p, 2)) for y, p in Y.items()]))
+    file_output.write('\n'.join(['p({}) = {}'.format(y, round(p, 4)) for y, p in Y.items()]))
     file_output.write('\n\nДля определения независимости ансамблей X и Y вычислим p(x_i) * p(y_j):\n')
     file_output.write('\n'.join(['p({}) * p({}) = {}'.format(x_y.split()[0], x_y.split()[1], round(p, 2)) for x_y, p in X_Y.items()]))
     file_output.write('\n\nВычислим условные вероятности:\n')

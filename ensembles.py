@@ -2,7 +2,7 @@ from functools import reduce
 import numpy as np
 
 
-accurateness: int = 6  # Округдение до знака
+accurateness: int = 8  # Округдение до знака
 
 
 def test_valid(input_ensemble: dict) -> bool:
